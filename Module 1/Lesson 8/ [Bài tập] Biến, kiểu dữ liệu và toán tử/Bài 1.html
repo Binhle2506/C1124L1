@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chương trinh nhập điểm</title>
+</head>
+<body>
+<h3>Kết quả : </h3>
+
+<script>
+    var a , b , c , d , e ;
+
+    a = parseFloat(prompt(' Nhập điểm môn Vật Lý : '));
+    b = parseFloat(prompt(' Nhập điểm môn Hóa Học : '));
+    c = parseFloat(prompt(' Nhập điểm môn Sinh Học : '));
+    d = (a + b + c) / 3 ; // Điểm trung bình
+    e = a + b + c ;// Tổng Điểm
+    document.write('Điểm trung bình của 3 môn là : ', d.toFixed(2) );
+    document.write('<br>');
+    document.write('Tông điểm của 3 môn là : ', e );
+</script>
+</body>
+</html>
