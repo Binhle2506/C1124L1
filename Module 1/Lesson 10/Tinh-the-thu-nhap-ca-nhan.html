@@ -5,14 +5,14 @@
     <title>Tính thuế thu nhập cá nhân</title>
 </head>
 <body>
-    <p>Nhập dữ liệu thu nhập the tháng để biết số thuế tạm nộp hàng tháng</p>
+<p>Nhập dữ liệu thu nhập hàng tháng để biết số thuế tạm nộp hàng tháng.</p>
 
 <script>
-    let T = prompt('Nhập tổng thu nhập cá nhân'); // Tổng thu nhập cá nhân
-    let N = prompt('Nhập số người phụ thuộc'); // Số người phụ thuộc
-    let G = 11000000 ; //Giảm trừ bản thân
-    let gtpt = N * 4400000 ; // Giam tru nguoi phu thuoc
-    let tnct = T - G - gtpt; // thu nhập chịu thuế
+    let T = parseFloat(prompt('Nhập tổng thu nhập cá nhân')); // Tổng thu nhập cá nhân
+    let N = parseInt(prompt('Nhập số người phụ thuộc')); // Số người phụ thuộc
+    let G = 11000000 ; // Giảm trừ bản thân
+    let gtpt = N * 4400000 ; // Giảm trừ người phụ thuộc
+    let tnct = T - G - gtpt; // Thu nhập chịu thuế
 
     let thue = 0; // Khởi tạo biến thuế
 
@@ -29,10 +29,12 @@
         thue = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + (tnct - 32000000) * 0.25;
     }
 
+    // Định dạng số với dấu phân cách và thêm đơn vị VND
+    let formattedTnct = tnct.toLocaleString() + " VND";
+    let formattedThue = thue.toLocaleString() + " VND";
+
     // Hiển thị kết quả
-    alert('Thu nhập chịu thuế: ' + tnct + ' VNĐ\nThuế thu nhập cá nhân: ' + thue + ' VNĐ');//git
-
-
+    alert('Thu nhập chịu thuế: ' + formattedTnct + '\nThuế thu nhập cá nhân: ' + formattedThue);
 </script>
 </body>
 </html>
