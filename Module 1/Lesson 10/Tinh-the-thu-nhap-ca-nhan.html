@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+    <p>Nhập dữ liệu thu nhập the tháng để biết số thuế tạm nộp hàng tháng</p>
+
+<script>
+    let T = prompt('Nhập tổng thu nhập cá nhân'); // Tổng thu nhập cá nhân
+    let N = prompt('Nhập số người phụ thuộc'); // Số người phụ thuộc
+    let G = 11000000 ; //Giảm trừ bản thân
+    let gtpt = N * 4400000 ; // Giam tru nguoi phu thuoc
+    let tnct = T - G - gtpt; // thu nhập chịu thuế
+
+    let thue = 0; // Khởi tạo biến thuế
+
+    // Kiểm tra thu nhập và tính thuế
+    if (tnct <= 5000000) {
+        thue = tnct * 0.05;
+    } else if (tnct <= 10000000) {
+        thue = 5000000 * 0.05 + (tnct - 5000000) * 0.10;
+    } else if (tnct <= 18000000) {
+        thue = 5000000 * 0.05 + 5000000 * 0.10 + (tnct - 10000000) * 0.15;
+    } else if (tnct <= 32000000) {
+        thue = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + (tnct - 18000000) * 0.20;
+    } else {
+        thue = 5000000 * 0.05 + 5000000 * 0.10 + 8000000 * 0.15 + 14000000 * 0.20 + (tnct - 32000000) * 0.25;
+    }
+
+    // Hiển thị kết quả
+    alert('Thu nhập chịu thuế: ' + tnct + ' VNĐ\nThuế thu nhập cá nhân: ' + thue + ' VNĐ');
+
+
+</script>
+</body>
+</html>
