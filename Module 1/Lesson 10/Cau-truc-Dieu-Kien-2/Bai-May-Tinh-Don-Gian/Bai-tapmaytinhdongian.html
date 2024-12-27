@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Máy tính đơn giản</title>
+</head>
+<style>
+    .h1{
+        color: blue;
+        width: 150px;
+        height: 100px;
+        font-size: 40px;
+    }
+    #Nhap{
+        width: 600px ;
+        height: 100px ;
+        font-size: 36px ;
+        padding: 10px;
+        box-sizing: border-box;
+        border-radius: 8px;
+    }
+
+
+
+</style>
+<body>
+<form action="javascript:void(0);"> <!-- Ngăn form gửi đi khi bấm các nút javascript:void(0); -->
+    <input id="Nhap" type="text" readonly >  <!-- Thêm id="result" và readonly để chỉ đọc giá trị từ script -->
+    <br><br>
+    <div>
+        <button type="button" class="h1" onclick="appendValue('1')">1</button>
+        <button type="button" class="h1" onclick="appendValue('2')">2</button>
+        <button type="button" class="h1" onclick="appendValue('3')">3</button>
+        <button type="button" class="h1" onclick="appendValue('+')">+</button>
+    </div>
+    <div>
+        <button type="button" class="h1" onclick="appendValue('4')">4</button>
+        <button type="button" class="h1" onclick="appendValue('5')">5</button>
+        <button type="button" class="h1" onclick="appendValue('6')">6</button>
+        <button type="button" class="h1" onclick="appendValue('-')">-</button>
+    </div>
+    <div>
+        <button type="button" class="h1" onclick="appendValue('7')">7</button>
+        <button type="button" class="h1" onclick="appendValue('8')">8</button>
+        <button type="button" class="h1" onclick="appendValue('9')">9</button>
+        <button type="button" class="h1" onclick="appendValue('*')">*</button>
+    </div>
+    <div>
+        <button type="button" class="h1" onclick="clearInput()">C</button>
+        <button type="button" class="h1" onclick="appendValue('0')">0</button>
+        <button type="button" class="h1" onclick="calculate()">=</button>
+        <button type="button" class="h1" onclick="appendValue('/')">/</button>
+    </div>
+<script>
+        // Hàm thêm giá trị (số hoặc ký hiệu) vào ô input
+        function appendValue(value) {
+            const input = document.getElementById('Nhap'); // Sửa tên id thành Nhap
+            input.value += value; // Thêm giá trị mới vào sau giá trị cũ
+        }
+
+        // Hàm xóa ký tự cuối cùng trong ô input
+        function clearInput() {
+            const input = document.getElementById('Nhap'); // Lấy phần tử input
+            input.value = input.value.slice(0, -1); // Loại bỏ ký tự cuối cùng
+        }
+
+        // Hàm tính toán giá trị biểu thức trong ô input
+        function calculate() {
+            const input = document.getElementById('Nhap'); // Lấy ô input
+            try {
+                input.value = eval(input.value); // Tính toán biểu thức sử dụng eval
+            } catch (error) {
+                input.value = 'Lỗi'; // Hiển thị "Lỗi" nếu biểu thức không hợp lệ
+            }
+        }
+</script>
+
+
+
+</form>
+</body>
+</html>
+

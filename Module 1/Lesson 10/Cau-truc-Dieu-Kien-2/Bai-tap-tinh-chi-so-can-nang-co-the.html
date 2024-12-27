@@ -7,5 +7,20 @@
 <body>
 
 
+<script>
+    let weight = parseFloat(prompt("Hãy Nhập Cân Nặng Của Bạn : "));
+    let height = parseFloat(prompt("Hãy Nhập Chiều Cao Của Bạn : "));
+    let bmi = weight / (height * height );
+    if (bmi < 18)
+        document.write("Underweight");
+    else if (bmi < 25.0)
+        document.write("Normal");
+    else if (bmi < 30.0)
+        document.write("Overweight");
+    else
+        document.write("Obese");
+
+
+</script>
 </body>
 </html>
