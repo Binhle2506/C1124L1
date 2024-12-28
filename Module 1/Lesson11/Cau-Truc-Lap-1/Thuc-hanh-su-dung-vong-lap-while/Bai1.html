@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bài 1</title>
+</head>
+<body>
+<script>
+  let num = prompt("Nhập một số : ");  // Nhập số ban đầu
+  let total = 0;  // Khai báo biến tổng, bắt đầu từ 0
+
+  while (num != -1) {  // Kiểm tra điều kiện kết thúc
+    alert(num);  // Hiển thị giá trị số nhập vào
+    total += parseInt(num);  //Cộng số vào tổng (chuyển đổi num thành số nguyên)
+    num = prompt("Nhập một số : ");  // Yêu cầu nhập lại số
+  }
+
+  alert("Tổng các giá trị bạn đã nhập là: " + total);  // Hiển thị tổng khi thoát vòng lặp
+</script>
+</body>
+</html>
