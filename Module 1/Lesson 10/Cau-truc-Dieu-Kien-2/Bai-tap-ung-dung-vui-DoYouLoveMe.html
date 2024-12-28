@@ -4,9 +4,30 @@
     <meta charset="UTF-8">
     <title>Bài tập ứng dụng DoYouLoveMe</title>
 </head>
+<style>
+    #noButton{
+        position: absolute;
+    }
+</style>
 <body>
 
 <h1>Do You Love Me ???</h1>
+<button type="button" onclick="Yess();">Yes</button>
+<button type="button" id="noButton">No</button>
+<script>
+    function Yess(){
+        alert('<3');
+    }
+    const noButton = document.getElementById('noButton');
+    noButton.addEventListener('mouseover', () => {
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+        const randomX = Math.random() * (windowWidth - noButton.offsetWidth);
+        const randomY = Math.random() * (windowHeight - noButton.offsetHeight);
+        noButton.style.left = `${randomX}px`;
+        noButton.style.top = `${randomY}px`;
+    });
+</script>
 
 </body>
 </html>

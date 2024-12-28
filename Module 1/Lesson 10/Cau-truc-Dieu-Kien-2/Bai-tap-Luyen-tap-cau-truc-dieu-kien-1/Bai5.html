@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let a = parseFloat(prompt("Nhập điểm các bài kiểm tra : "));
+    let b = parseFloat(prompt("Nhập điểm giữa kỳ : "));
+    let c = parseFloat(prompt("Nhập điểm cuối kỳ : "));
+    if (isNaN(a) || isNaN(b) || isNaN(c)) {
+      alert("Vui lòng nhập điểm hợp lệ (là số)");
+    }
+    let DTB = ( a * 0.2) + (b * 0.3) + (c * 0.5);
+    alert("Điểm trung bình của bạn là : " + DTB.toString(2));
+    if ( DTB < 5.0 ){
+      alert("Đạt học lực yếu");
+    }else if( DTB >= 5.0 && DTB <7.0 ){
+      alert("Đạt học sinh loại trung bình");
+    }else if(DTB >= 7.0 && DTB < 8.5 ){
+      alert("Đạt học sinh loại khá")
+    }else if(DTB >= 8.5){
+      alert("Đạt học sinh loại giỏi");
+    }
+</script>
+</body>
+</html>
