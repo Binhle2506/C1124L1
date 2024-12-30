@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Hiển thị các số nguyên tố đầu tiên</title>
+</head>
+<body>
+
+<script>
+  // Nhập giá trị n
+  let n = prompt("Nhập số nguyên dương n: ");
+  n = Number(n); // Ép kiểu về số
+
+  // Kiểm tra tính hợp lệ của n
+  if (n > 0 && Math.floor(n) === n) { // Kiểm tra n là số nguyên dương
+    document.write("Các số nguyên tố từ 1 đến " + n + " là: <br>");
+
+    // Duyệt qua các số từ 2 đến n
+    for (let i = 2; i <= n; i++) {
+      let isPrime = true; // Giả sử i là số nguyên tố
+
+      // Kiểm tra i có chia hết cho bất kỳ số nào nhỏ hơn nó hay không
+      for (let j = 2; j < i; j++) {
+        if (i % j === 0) {
+          isPrime = false;
+          break;
+        }
+      }
+
+      // Nếu là số nguyên tố, hiển thị ra
+      if (isPrime) {
+        document.write(i + " ");
+      }
+    }
+  } else {
+    document.write("Vui lòng nhập một số nguyên dương hợp lệ.");
+  }
+</script>
+</body>
+</html>

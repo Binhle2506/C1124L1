@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>[Bài tập] Sinh bảng cửu chương</title>
+</head>
+<body>
+<script>
+  document.write("<table border='1' style='border-collapse: collapse; text-align: center;'>");
+
+  for (let j = 1; j < 10; j++) { // Dòng theo số nhân
+    document.write("<tr>"); // Mở dòng mới
+    for (let i = 2; i < 10; i++) { // Cột theo số bảng
+      document.write("<td>" + i + " * " + j + " = " + (i * j) + "</td>");
+    }
+    document.write("</tr>"); // Đóng dòng
+  }
+
+  document.write("</table>");
+</script>
+</body>
+</html>
