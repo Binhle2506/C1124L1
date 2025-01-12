@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<button onclick="startGame()">Chơi</button>
+<script>
+
+    function startGame() {
+        let min = parseInt(prompt("Nhập số nhỏ nhất trong khoảng: "));
+        let max = parseInt(prompt("Nhập số lớn nhất trong khoảng: "));
+
+        if (isNaN(min) || isNaN(max) || min >= max) {
+            alert("Phạm vi không hợp lệ. Vui lòng thử lại!");
+            return;
+        }
+
+        let randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+        let guess = null;
+
+        while (guess !== randomNumber) {
+            guess = parseInt(prompt(`Hãy đoán một số trong khoảng ${min} đến ${max}:`));
+
+            if (guess === randomNumber) {
+                alert("Chúc mừng bạn đã đoán đúng!");
+                break;
+            } else if (guess > randomNumber) {
+                alert("Số bạn đoán lớn hơn số cần tìm!");
+            } else if (guess < randomNumber) {
+                alert("Số bạn đoán nhỏ hơn số cần tìm!");
+            } else {
+                alert("Vui lòng nhập một số hợp lệ!");
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

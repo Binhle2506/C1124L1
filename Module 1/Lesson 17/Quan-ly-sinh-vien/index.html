@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Quản Lý Sinh Viên</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Quản Lý Sinh Viên</h1>
+
+    <form id="add-student-form">
+        <div class="form-group">
+            <label for="student-name">Họ Và Tên:</label>
+            <input type="text" id="student-name" placeholder="Nhập họ tên sinh viên" required />
+        </div>
+        <div class="form-group">
+            <label for="student-age">Tuổi:</label>
+            <input type="number" id="student-age" placeholder="Nhập tuổi sinh viên" required />
+        </div>
+        <div class="form-group">
+            <label for="student-phone">Số Điện Thoại:</label>
+            <input type="text" id="student-phone" placeholder="Nhập số điện thoại" required />
+        </div>
+        <div class="form-group">
+            <label for="student-address">Địa Chỉ:</label>
+            <input type="text" id="student-address" placeholder="Nhập địa chỉ sinh viên" required />
+        </div>
+        <button type="submit" class="submit-btn">Thêm Sinh Viên</button>
+        <button type="button" id="update-btn" class="submit-btn" style="display: none;">Cập Nhật</button>
+    </form>
+
+    <h2>Danh Sách Sinh Viên</h2>
+    <ul id="student-list"></ul>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
