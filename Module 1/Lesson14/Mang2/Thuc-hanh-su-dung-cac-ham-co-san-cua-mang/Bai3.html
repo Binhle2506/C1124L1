@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+  let inputString = prompt('Nhập một chuỗi:');
+  let result = "";
+
+  for (let i = 0; i < inputString.length; i++) {
+    let char = inputString[i];
+
+    if (char === char.toLowerCase()) {
+      result += char.toUpperCase();
+    } else {
+      result += char.toLowerCase();
+    }
+  }
+
+  alert(result);
+</script>
+
+</body>
+</html>

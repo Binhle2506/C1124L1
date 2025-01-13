@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+  let number = "025468";
+  let result = "";
+
+  for (let i = 0; i < number.length; i++) {
+    let digit = number[i];
+
+    result += digit;
+
+    // Chỉ chèn dấu '-' khi cả hai số liền nhau đều là số chẵn
+    if (parseInt(digit) % 2 === 0 && i < number.length - 1 && parseInt(number[i + 1]) % 2 === 0) {
+      result += "-";
+    }
+  }
+
+  alert(result);
+</script>
+
+
+
+
+
+</body>
+</html>
