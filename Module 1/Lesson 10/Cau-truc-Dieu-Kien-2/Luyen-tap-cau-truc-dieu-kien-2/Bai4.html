@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    let length = parseFloat(prompt('Nhập chiều dài của hình chữ nhật:'));
+    let width = parseFloat(prompt('Nhập chiều rộng của hình chữ nhật:'));
+    if (isNaN(length) || isNaN(width)) {
+        alert("Vui lòng nhập một giá trị số hợp lệ!");
+    } else {
+        let area = length * width;
+        alert('Diện tích hình chữ nhật có chiều dài = ' + length + ' và chiều rộng = ' + width + ' là ' + area);
+    }
+</script>
+
+
+</body>
+</html>

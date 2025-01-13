@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+  let age = parseInt(prompt('Nhập vào một số để kiểm tra tuổi:'));
+
+  if (isNaN(age)) {
+    alert("Vui lòng nhập một số hợp lệ!");
+  } else if (age > 0 && age <= 120) {
+    alert("Đây là một tuổi hợp lệ.");
+  } else {
+    alert("Đây không phải là tuổi hợp lệ. Tuổi phải lớn hơn 0 và nhỏ hơn hoặc bằng 120.");
+  }
+</script>
+
+</body>
+</html>

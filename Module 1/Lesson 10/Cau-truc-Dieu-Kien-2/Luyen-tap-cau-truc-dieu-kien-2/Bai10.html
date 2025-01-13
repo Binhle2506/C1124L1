@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 10</title>
+</head>
+<body>
+<script>
+  let electricityUsage = parseFloat(prompt("Nhập số kWh điện tiêu thụ trong tháng:"));
+
+  if (isNaN(electricityUsage) || electricityUsage <= 0) {
+    alert("Vui lòng nhập số kWh hợp lệ và lớn hơn 0!");
+  } else {
+    let totalAmount;
+
+    if (electricityUsage <= 50) {
+      totalAmount = electricityUsage * 1000;  // 1,000 VND/kWh cho 50 kWh đầu tiên
+    } else if (electricityUsage <= 100) {
+      totalAmount = 50 * 1000 + (electricityUsage - 50) * 1500;  // 1,000 VND/kWh cho 50 kWh đầu tiên và 1,500 VND/kWh cho từ 51 đến 100 kWh
+    } else {
+      totalAmount = 50 * 1000 + 50 * 1500 + (electricityUsage - 100) * 2000;  // 1,000 VND/kWh cho 50 kWh đầu tiên, 1,500 VND/kWh cho 51 đến 100 kWh, và 2,000 VND/kWh cho trên 100 kWh
+    }
+
+    alert("Số tiền phải thanh toán cho " + electricityUsage + " kWh điện là: " + totalAmount + " VND");
+  }
+</script>
+
+</body>
+</html>

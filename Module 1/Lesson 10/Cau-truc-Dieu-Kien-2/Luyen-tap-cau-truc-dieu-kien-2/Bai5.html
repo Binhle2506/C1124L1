@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let catVuong1 = parseFloat(prompt('Nhập chiều dài cạnh vuông góc 1 của tam giác vuông:'));
+    let catVuong2 = parseFloat(prompt('Nhập chiều dài cạnh vuông góc 2 của tam giác vuông:'));
+    if (isNaN(catVuong1) || isNaN(catVuong2)) {
+        alert("Vui lòng nhập một giá trị số hợp lệ!");
+    } else {
+        let area = 0.5 * catVuong1 * catVuong2;
+        alert('Diện tích tam giác vuông với cạnh vuông góc 1 = ' + catVuong1 + ' và cạnh vuông góc 2 = ' + catVuong2 + ' là ' + area);
+    }
+</script>
+
+
+</body>
+</html>

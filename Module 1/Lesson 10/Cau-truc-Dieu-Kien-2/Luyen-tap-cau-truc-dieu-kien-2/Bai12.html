@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 12</title>
+</head>
+<body>
+<script>
+  let principal = parseFloat(prompt("Nhập số tiền gốc ban đầu bạn vay (VND):"));
+  let interestRate = parseFloat(prompt("Nhập lãi suất hàng tháng (theo %):"));
+  let months = parseInt(prompt("Nhập số tháng cho vay:"));
+
+  if (isNaN(principal) || isNaN(interestRate) || isNaN(months) || principal <= 0 || interestRate < 0 || months <= 0) {
+    alert("Vui lòng nhập các giá trị hợp lệ!");
+  } else {
+    let finalAmount = principal * Math.pow(1 + interestRate / 100, months);
+    let interest = finalAmount - principal;
+
+    alert("Số tiền cuối cùng (gốc + lãi) bạn cần trả là: " + finalAmount.toFixed(2) + " VND");
+    alert("Tổng lãi bạn nhận được là: " + interest.toFixed(2) + " VND");
+  }
+</script>
+
+</body>
+</html>

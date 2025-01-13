@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+  let a = parseFloat(prompt('Nhập hệ số a của phương trình bậc 1 (ax + b = 0):'));
+  let b = parseFloat(prompt('Nhập hệ số b của phương trình bậc 1 (ax + b = 0):'));
+
+  if (isNaN(a) || isNaN(b)) {
+    alert("Vui lòng nhập một giá trị số hợp lệ!");
+  } else if (a === 0) {
+    if (b === 0) {
+      alert("Phương trình có vô số nghiệm.");
+    } else {
+      alert("Phương trình vô nghiệm.");
+    }
+  } else {
+    let x = -b / a;
+    alert("Nghiệm của phương trình là x = " + x);
+  }
+</script>
+
+</body>
+</html>

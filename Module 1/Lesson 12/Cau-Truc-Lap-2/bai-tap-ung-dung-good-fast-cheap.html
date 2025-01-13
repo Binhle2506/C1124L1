@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Good-Fast-Cheap App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .description {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+
+        .option-label {
+            font-size: 18px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Ứng Dụng Good-Fast-Cheap</h1>
+    <p class="description">Chọn hai yếu tố mà bạn muốn trong quá trình phát triển và chúng tôi sẽ giúp bạn xem kết quả!</p>
+
+    <div class="options">
+        <div>
+            <label class="option-label">
+                <input type="checkbox" id="good" name="good"> Tốt
+            </label>
+        </div>
+        <div>
+            <label class="option-label">
+                <input type="checkbox" id="fast" name="fast"> Nhanh
+            </label>
+        </div>
+        <div>
+            <label class="option-label">
+                <input type="checkbox" id="cheap" name="cheap"> Rẻ
+            </label>
+        </div>
+    </div>
+
+    <button class="button" onclick="evaluate()">Đánh Giá</button>
+
+    <div id="result"></div>
+</div>
+
+<script>
+    function evaluate() {
+        let good = document.getElementById('good').checked;
+        let fast = document.getElementById('fast').checked;
+        let cheap = document.getElementById('cheap').checked;
+        let result = '';
+
+        // Kiểm tra sự kết hợp của các yếu tố đã chọn
+        if (good && fast) {
+            result = "Bạn sẽ có sản phẩm tốt và nhanh, nhưng nó sẽ không rẻ.";
+        } else if (good && cheap) {
+            result = "Bạn sẽ có sản phẩm tốt và rẻ, nhưng nó sẽ không nhanh.";
+        } else if (fast && cheap) {
+            result = "Bạn sẽ có sản phẩm nhanh và rẻ, nhưng nó sẽ không tốt.";
+        } else {
+            result = "Vui lòng chọn hai yếu tố để phân tích.";
+        }
+
+        // Hiển thị kết quả trong phần tử result
+        document.getElementById('result').textContent = result;
+    }
+</script>
+
+</body>
+</html>

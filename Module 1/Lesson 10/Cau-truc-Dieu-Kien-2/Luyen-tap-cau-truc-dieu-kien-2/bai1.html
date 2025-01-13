@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    let celsius = parseFloat(prompt('Nhập nhiệt độ C bây giờ'));
+    if (isNaN(celsius)) {
+        alert("Vui lòng nhập một giá trị số hợp lệ!");
+    } else {
+        let fahrenheit = 9/5 * celsius + 32;
+        alert(celsius + '°C đổi sang F là ' + fahrenheit.toFixed(2) + '°F');
+    }
+</script>
+
+</body>
+</html>

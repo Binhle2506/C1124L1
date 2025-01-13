@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    let meters = parseFloat(prompt('Nhập số mét cần chuyển đổi:'));
+    if (isNaN(meters)) {
+        alert("Vui lòng nhập một giá trị số hợp lệ!");
+    } else {
+        let feet = meters * 3.2808;
+        alert(meters + ' mét bằng ' + feet.toFixed(2) + ' feet');
+    }
+</script>
+
+</body>
+</html>
