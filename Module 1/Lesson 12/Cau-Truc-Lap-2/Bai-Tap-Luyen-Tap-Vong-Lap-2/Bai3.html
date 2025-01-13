@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let a = 5;
+    for (let i = 1; i <= a; i++) {
+        let row1 = '';
+        for (let j = 1; j <=i ; j++) {
+            row1 += '*';
+        }
+        console.log(row1);
+    }
+    console.log('');
+    let b = 5;
+    for (let i = b; i >= 1; i--) {
+        let row2 = '';
+        for (let j = 1; j <=i ; j++) {
+            row2 += '*';
+        }
+        console.log(row2);
+    }
+    console.log('');
+    let c = 5 ;
+    for(let i = 1; i <= c ; i++){
+        let row3 = '';
+        for(let j = 1 ; j <= c - i ; j++){
+            row3 += ' ';
+        }
+        for(let k = 1 ; k <= i ; k++){
+            row3 += '*';
+        }
+        console.log(row3);
+    }
+    console.log('');
+    let d = 5 ;
+    for(let i = d; i >= 1 ; i--){
+        let row4 = '';
+        for(let j = 1 ; j <= d - i ; j++){
+            row4 += ' ';
+        }
+        for(let k = 1 ; k <= i ; k++){
+            row4 += '*';
+        }
+        console.log(row4);
+    }
+
+</script>
+</body>
+</html>

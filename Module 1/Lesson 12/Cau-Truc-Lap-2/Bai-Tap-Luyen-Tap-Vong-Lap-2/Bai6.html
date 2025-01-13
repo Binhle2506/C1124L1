@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vẽ Hình Trái Tim bằng Vòng Lặp</title>
+</head>
+<body>
+
+<pre id="heart"></pre>
+
+<script>
+    let heart = '';
+    let rows = 6;
+
+    for (let i = rows / 2; i <= rows; i++) {
+        for (let j = 1; j <= (rows - i); j++) {
+            heart += ' ';
+        }
+        for (let j = 1; j <= (2 * i - 1); j++) {
+            heart += '*';
+        }
+        heart += '\n';
+    }
+
+    for (let i = 1; i <= (rows - 1); i++) {
+        for (let j = 1; j <= i; j++) {
+            heart += ' ';
+        }
+        for (let j = 1; j <= (2 * (rows - i) - 1); j++) {
+            heart += '*';
+        }
+        heart += '\n';
+    }
+
+    document.getElementById('heart').textContent = heart;
+</script>
+</body>
+</html>

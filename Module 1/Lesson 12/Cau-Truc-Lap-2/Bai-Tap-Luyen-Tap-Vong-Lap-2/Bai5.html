@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tính Lãi Ngân Hàng</title>
+</head>
+<body>
+<h1>Tính Lãi Ngân Hàng</h1>
+<label for="principal">Số tiền gốc ban đầu:</label>
+<input type="number" id="principal" placeholder="Nhập số tiền gốc">
+<br>
+
+<label for="interestRate">Lãi suất hàng tháng (%):</label>
+<input type="number" id="interestRate" placeholder="Nhập lãi suất">
+<br>
+
+<label for="numberOfPeriods">Số tháng vay:</label>
+<input type="number" id="numberOfPeriods" placeholder="Nhập số tháng vay">
+<br>
+
+<button onclick="calculateLoan()">Tính Lãi</button>
+<br><br>
+
+<p id="result"></p>
+
+<script>
+    function calculateLoan() {
+        let principal = parseFloat(document.getElementById("principal").value);
+        let interestRate = parseFloat(document.getElementById("interestRate").value) / 100; // Chia cho 100 để chuyển thành số thập phân
+        let numberOfPeriods = parseInt(document.getElementById("numberOfPeriods").value);
+
+        if (isNaN(principal) || isNaN(interestRate) || isNaN(numberOfPeriods) || principal <= 0 || interestRate <= 0 || numberOfPeriods <= 0) {
+            alert("Vui lòng nhập đầy đủ thông tin hợp lệ.");
+            return;
+        }
+
+        // Tính lãi kép
+        let totalAmount = principal * Math.pow((1 + interestRate), numberOfPeriods);
+        let interestAmount = totalAmount - principal;
+
+        // Hiển thị kết quả
+        document.getElementById("result").innerHTML =
+            "Số tiền bạn phải trả sau " + numberOfPeriods + " tháng: " + totalAmount.toLocaleString('vi-VN') + "<br>" +
+            "Lãi bạn nhận được là: " + interestAmount.toLocaleString('vi-VN');
+    }
+</script>
+</body>
+</html>

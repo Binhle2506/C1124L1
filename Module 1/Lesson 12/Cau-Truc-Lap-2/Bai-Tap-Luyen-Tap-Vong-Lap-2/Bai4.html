@@ -1,0 +1,71 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Rectangle Display</title>-->
+<!--    <style>-->
+<!--        .rectangle {-->
+<!--            font-family: monospace;-->
+<!--            white-space: pre; /* Giữ nguyên khoảng trắng và xuống dòng */-->
+<!--            line-height: 1; /* Đảm bảo các dòng sát nhau */-->
+<!--        }-->
+<!--    </style>-->
+<!--</head>-->
+<!--<body>-->
+<!--<h1>Hình chữ nhật</h1>-->
+<!--<div id="rectangle" class="rectangle"></div>-->
+
+<!--<script>-->
+<!--    let width = 21; // Chiều rộng-->
+<!--    let height = 7; // Chiều cao-->
+<!--    let rectangle = ''; // Chuỗi kết quả-->
+
+<!--    for (let i = 0; i < height; i++) {-->
+<!--        for (let j = 0; j < width; j++) {-->
+<!--            // Viền ngoài là '*', bên trong là khoảng trắng-->
+<!--            if (i === 0 || i === height - 1 || j === 0 || j === width - 1) {-->
+<!--                rectangle += '*'; // Viền-->
+<!--            } else {-->
+<!--                rectangle += ' '; // Phần trong-->
+<!--            }-->
+<!--        }-->
+<!--        rectangle += '\n'; // Kết thúc một dòng-->
+<!--    }-->
+
+<!--    // Hiển thị hình chữ nhật lên giao diện-->
+<!--    document.getElementById('rectangle').textContent = rectangle;-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bài 4</title>
+</head>
+<style>
+    body {
+        font-family: monospace;
+        white-space: pre;
+    }
+</style>
+
+<body>
+<script>
+    let n = 7 ;
+    let m = 21 ;
+    for(let i = 1 ; i<= n ; i++){
+        for(let j = 1 ; j <= m ; j++){
+            if( i === 1 || i === n || j === 1 || j === m ){
+                document.write('*');
+            }else {
+                document.write(' ');
+            }
+        }
+        document.write('<br>');
+    }
+</script>
+</body>
+</html>
