@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    let a = ["hello", -23, 34, -3 , "-23" , "-234","-36","game", "javaScript", -123, 3,3,42, -343];
+    let count = 0;
+    for(let i = 0 ; i < a.length ; i++ ) {
+
+        if (!isNaN(a[i]) && +a[i] < 0) {
+            count += 1;
+        }
+
+    }
+    console.log("có " + count +" số nguyên âm");
+
+</script>
+</body>
+</html>

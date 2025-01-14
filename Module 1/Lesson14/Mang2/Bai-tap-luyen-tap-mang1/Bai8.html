@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhập số lượng phần tử mảng:");
+    } while (isNaN(n) || n <= 0);
+
+    let a = new Array(n);
+    for (let i = 0; i < a.length; i++) {
+        a[i] = +prompt("Nhập giá trị phần tử a[" + i + "]:");
+    }
+
+    for (let i = 0; i < a.length - 1; i++) {
+        for (let j = 0; j < a.length - i - 1; j++) {
+            if (a[j] < a[j + 1]) {
+                let temp = a[j];
+                a[j] = a[j + 1];
+                a[j + 1] = temp;
+            }
+        }
+    }
+
+    console.log("Mảng sau khi sắp xếp giảm dần:", a.join(", "));
+    alert("Mảng sau khi sắp xếp giảm dần: " + a.join(", "));
+</script>
+
+</body>
+</html>

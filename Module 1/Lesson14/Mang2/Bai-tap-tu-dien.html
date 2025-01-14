@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài Tập từ điển</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate Search</title>
+</head>
+<body>
+<h2>Chương trình tìm kiếm từ tiếng Anh - tiếng Việt</h2>
+<form id="searchForm">
+    <label for="searchWord">Nhập từ tiếng Anh:</label>
+    <input type="text" id="searchWord" placeholder="Tìm kiếm từ...">
+    <button type="submit">Tìm kiếm</button>
+</form>
+
+<div id="result"></div>
+
+<script>
+    const englishWords = ['apple', 'book', 'cat', 'dog', 'house'];
+    const vietnameseWords = ['táo', 'sách', 'mèo', 'chó', 'nhà'];
+
+    document.getElementById('searchForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        let searchWord = document.getElementById('searchWord').value.trim().toLowerCase(); // Đổi tất cả chữ thành chữ thường
+        let index = englishWords.indexOf(searchWord);
+
+        if (index !== -1) {
+            document.getElementById('result').textContent = `Từ tiếng Việt của '${searchWord}' là '${vietnameseWords[index]}'.`;
+        } else {
+            document.getElementById('result').textContent = `Không tìm thấy từ '${searchWord}' trong từ điển.`;
+        }
+    });
+</script>
+</body>
+</html>
+
+</body>
+</html>

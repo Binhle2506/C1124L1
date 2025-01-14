@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    let n;
+    do {
+        n = +prompt("Nhập số lượng phần tử của mảng a ");
+    } while (isNaN(n) || n <= 0);
+
+    let a = new Array(n);
+    for (let i = 0; i < a.length; i++) {
+        do {
+            a[i] = +prompt('Nhập giá trị phần tử a[' + i + ']');
+        } while (isNaN(a[i]));
+    }
+
+    let v = +prompt("Nhập số nguyên V cần tìm ");
+    let found = false;
+    for (let i = 0; i < a.length; i++) {
+        if (a[i] === v) {
+            alert('V is in the array');
+            found = true;
+            alert('Thực hiện xóa V');
+            a.splice(i, 1);
+            console.log(a);
+            break;
+        }
+    }
+
+    if (!found) {
+        alert('V is not in the array');
+    }
+
+</script>
+</body>
+</html>

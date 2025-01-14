@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+</body>
+<script>
+  let n ;
+  do{
+     n = +prompt("Nhập số lượng phần tử mảng a");
+  }while(isNaN(n) || n <= 0)
+  let a = new Array(n);
+
+  for (let i = 0; i < n; i++) {
+      a[i] = +prompt("Nhập giá trị phần tử a["+i+"]");
+  }
+  let max = a[0];
+  for(let i = 0 ; i < a.length; i++){
+     if( a[i] > max){
+        max = a[i];
+     }
+  }
+  alert("Giá trị lớn nhất của mảng a là " + max +" thuộc phần tử " + "a["+a.indexOf(max)+"]");
+  let sum =0 ;
+  for (let i = 0; i < a.length; i++) {
+      sum += a[i] ;
+  }
+  let medium = sum / n ;
+  alert("Giá trị trung bình của các phần tử trong mảng là " + medium);
+
+</script>
+</html>
