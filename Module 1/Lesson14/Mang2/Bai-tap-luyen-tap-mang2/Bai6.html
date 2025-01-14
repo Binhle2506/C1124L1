@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    let str = prompt("Nhập vào chuỗi ký tự:");
+    let arr = str.split("");
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === '-') {
+            arr[i] = '_';
+        }
+    }
+    let result = arr.join("");
+    console.log("Chuỗi sau khi thay thế:", result);
+    alert("Chuỗi sau khi thay thế: " + result);
+</script>
+
+</body>
+</html>
