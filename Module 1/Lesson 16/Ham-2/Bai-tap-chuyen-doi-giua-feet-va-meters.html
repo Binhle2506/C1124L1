@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[Bài tập] Chuyển đổi giữa feet và meters</title>
+</head>
+<body>
+<script>
+function footToMeter(foot){
+    let meter = 0.305 * foot ;
+    return meter;
+}
+function meterToFoot(meter){
+    let foot = 3.279 * meter ;
+    return foot
+}
+let c = +prompt("Chọn đơn vị bạn muốn chuyển đổi : 1 : feet -> meters  2 : meters -> feet ");
+if (c === 1) {
+    let a = +prompt("Nhập giá trị feet cần đổi");
+    if (!isNaN(a)) {
+        alert("Giá trị đổi qua meters: " + footToMeter(a));
+    } else {
+        alert("Giá trị nhập không hợp lệ!");
+    }
+} else if (c === 2) {
+    let b = +prompt("Nhập giá trị meters");
+    if (!isNaN(b)) {
+        alert("Giá trị đổi qua feet: " + meterToFoot(b));
+    } else {
+        alert("Giá trị nhập không hợp lệ!");
+    }
+} else {
+    alert("Bạn đã chọn sai đơn vị cần chuyển đổi");
+}
+
+
+</script>
+</body>
+</html>

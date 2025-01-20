@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    function compareAndAdd(num1, num2) {
+        if (num1 > num2) {
+            alert("Số thứ nhất lớn hơn số thứ hai.");
+        } else {
+            let result = num1 + num2;
+            alert("Tổng của hai số là " + result);
+        }
+    }
+
+    let a = prompt("Nhập số thứ nhất");
+    let b = prompt("Nhập số thứ hai");
+
+    if (isNaN(a) || isNaN(b) || a.trim() === "" || b.trim() === "") {
+        alert("Vui lòng nhập số hợp lệ!");
+    } else {
+        compareAndAdd(+a, +b);
+    }
+</script>
+</body>
+</html>
+
+</body>
+</html>
