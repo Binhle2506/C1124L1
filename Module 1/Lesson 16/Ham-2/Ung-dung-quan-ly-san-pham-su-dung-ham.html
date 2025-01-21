@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng quản lý sản phẩm sử dụng hàm</title>
+</head>
+<body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý sản phẩm</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #F8F4E6; /* Màu sáng kem dễ nhìn */
+            margin: 0;
+            padding: 0;
+            color: #4B4A48; /* Màu chữ dễ đọc */
+        }
+
+        .container {
+            width: 80%;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #D2B48C; /* Màu nâu */
+            border-radius: 8px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #B4A796; /* Màu viền nhẹ nhàng */
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #8B4513; /* Màu nâu đậm */
+            color: white;
+            border: none;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: black; /* Màu nâu sáng hơn khi hover */
+            
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        table th {
+            background-color: #8B5E3C; /* Nâu đậm */
+            color: white;
+        }
+
+        .btn-action {
+            padding: 6px 12px;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .btn-edit {
+            background-color: #FFA500; /* Màu vàng cho nút sửa */
+        }
+
+        .btn-delete {
+            background-color: #DC143C; /* Màu đỏ cho nút xóa */
+        }
+
+        .btn-save {
+            background-color: #DAA520; /* Màu vàng đậm cho nút lưu */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Quản lý Sản phẩm</h1>
+
+    <div class="input-group">
+        <input type="text" id="productName" placeholder="Nhập tên sản phẩm">
+        <input type="text" id="productPrice" placeholder="Nhập giá sản phẩm">
+        <button onclick="addProduct()">Thêm sản phẩm</button>
+    </div>
+
+    <table>
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Tên sản phẩm</th>
+            <th>Giá</th>
+            <th>Hành động</th>
+        </tr>
+        </thead>
+        <tbody id="productList"></tbody>
+    </table>
+</div>
+
+<script>
+    let products = [];
+
+    // Hàm để hiển thị sản phẩm
+    function renderProducts() {
+        const productList = document.getElementById('productList');
+        productList.innerHTML = '';
+
+        products.forEach((product, index) => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td><input type="text" value="${product.name}" id="product-name-${index}" disabled></td>
+                <td><input type="text" value="${product.price}" id="product-price-${index}" disabled></td>
+                <td>
+                    <button class="btn-action btn-edit" onclick="editProduct(${index})">Sửa</button>
+                    <button class="btn-action btn-save" onclick="saveProduct(${index})" style="display: none;">Lưu</button>
+                    <button class="btn-action btn-delete" onclick="deleteProduct(${index})">Xóa</button>
+                </td>
+            `;
+            productList.appendChild(row);
+        });
+    }
+
+    // Hàm thêm sản phẩm
+    function addProduct() {
+        const name = document.getElementById('productName').value.trim();
+        const price = document.getElementById('productPrice').value.trim();
+
+        if (name === '' || price === '') {
+            alert('Vui lòng nhập đầy đủ thông tin sản phẩm!');
+            return;
+        }
+
+        products.push({ name, price });
+        document.getElementById('productName').value = '';
+        document.getElementById('productPrice').value = '';
+        renderProducts();
+    }
+
+    // Hàm sửa sản phẩm
+    function editProduct(index) {
+        document.getElementById(`product-name-${index}`).disabled = false;
+        document.getElementById(`product-price-${index}`).disabled = false;
+        document.querySelectorAll(`.btn-save`)[index].style.display = 'inline-block';
+        document.querySelectorAll(`.btn-edit`)[index].style.display = 'none';
+    }
+
+    // Hàm lưu thay đổi sản phẩm
+    function saveProduct(index) {
+        const newName = document.getElementById(`product-name-${index}`).value.trim();
+        const newPrice = document.getElementById(`product-price-${index}`).value.trim();
+
+        if (newName === '' || newPrice === '') {
+            alert('Tên và giá sản phẩm không thể để trống!');
+            return;
+        }
+
+        products[index] = { name: newName, price: newPrice };
+        renderProducts();
+    }
+
+    // Hàm xóa sản phẩm
+    function deleteProduct(index) {
+        if (confirm('Bạn có chắc muốn xóa sản phẩm này?')) {
+            products.splice(index, 1);
+            renderProducts();
+        }
+    }
+
+    renderProducts();
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
