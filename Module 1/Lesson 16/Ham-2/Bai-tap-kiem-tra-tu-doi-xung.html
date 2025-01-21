@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>[*Bài tập] Kiểm tra từ đối xứng</title>
+</head>
+<body>
+<script>
+    function isPalindrome(str) {
+        // Loại bỏ dấu cách và chuyển tất cả ký tự về chữ thường để so sánh chính xác
+        str = str.replace(/\s+/g, '').toLowerCase();
+
+        // Đệ quy để kiểm tra chuỗi
+        if (str.length <= 1) {
+            // Nếu chuỗi chỉ có một ký tự hoặc không có ký tự, nó là palindrome
+            return true;
+        } else {
+            // Kiểm tra xem ký tự đầu và cuối có giống nhau không
+            if (str[0] === str[str.length - 1]) {
+                // Nếu giống nhau, gọi đệ quy trên phần còn lại
+                return isPalindrome(str.slice(1, str.length - 1));
+            } else {
+                // Nếu không giống nhau, chuỗi không phải là palindrome
+                return false;
+            }
+        }
+    }
+
+    // Ví dụ sử dụng
+    console.log(isPalindrome('rotor')); // true
+    console.log(isPalindrome('redder')); // true
+    console.log(isPalindrome('motor')); // false
+    console.log(isPalindrome('A man a plan a canal Panama')); // true
+
+</script>
+</body>
+</html>
