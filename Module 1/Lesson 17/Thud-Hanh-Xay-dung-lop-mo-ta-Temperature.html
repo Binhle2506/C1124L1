@@ -1,0 +1,93 @@
+ <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>[Bài tập] Xây dựng lớp mô tả Temperature </title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                padding: 20px;
+            }
+
+            label, p {
+                font-size: 18px;
+            }
+
+            input {
+                font-size: 18px;
+            }
+
+            button {
+                margin-top: 10px;
+                padding: 10px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .result {
+                margin-top: 20px;
+                font-size: 20px;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>Temperature Conversion</h1>
+
+    <div>
+        <label for="celsius">Nhiệt độ độ C: </label>
+        <input type="number" id="celsius" value="25" />
+        <button id="convertBtn">Chuyển đổi</button>
+    </div>
+
+    <div class="result">
+        <p>Độ F: <span id="fahrenheit"></span></p>
+        <p>Độ K (Kelvin): <span id="kelvin"></span></p>
+    </div>
+
+    <script>
+        class Temperature {
+            constructor(celsius) {
+                // Nhiệt độ theo độ C
+                this.celsius = celsius;
+            }
+
+            // Chuyển từ độ C sang độ F
+            toFahrenheit() {
+                return (this.celsius * 9/5) + 32;
+            }
+
+            // Chuyển từ độ C sang độ Kelvin
+            toKelvin() {
+                return this.celsius + 273.15;
+            }
+
+            // Phương thức cập nhật giá trị độ C
+            updateCelsius(celsius) {
+                this.celsius = celsius;
+            }
+        }
+
+        // Tạo đối tượng Temperature với giá trị ban đầu là 25°C
+        let temp = new Temperature(25);
+
+        // Hiển thị kết quả chuyển đổi
+        function displayResults() {
+            // Lấy giá trị nhiệt độ từ input
+            let celsiusValue = parseFloat(document.getElementById('celsius').value);
+            temp.updateCelsius(celsiusValue);
+
+            // Hiển thị các giá trị chuyển đổi
+            document.getElementById('fahrenheit').textContent = temp.toFahrenheit();
+            document.getElementById('kelvin').textContent = temp.toKelvin();
+        }
+
+        // Sự kiện khi nhấn nút "Chuyển đổi"
+        document.getElementById('convertBtn').addEventListener('click', displayResults);
+
+        // Khởi động trang và hiển thị kết quả mặc định
+        window.onload = displayResults;
+
+    </script>
+    </body>
+    </html>
