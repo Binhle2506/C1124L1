@@ -2,9 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 4</title>
 </head>
 <body>
+<script>
+    function isDigit(char) {
+// Sử dụng hàm isNaN để kiểm tra
+        return !isNaN(char) && char.trim() !== '';
+    }
 
+    // Ví dụ sử dụng
+    console.log(isDigit('5'));   // true
+    console.log(isDigit('a'));   // false
+    console.log(isDigit(' '));   // false
+    console.log(isDigit(''));    // false
+    console.log(isDigit('10'));  // true
+</script>
 </body>
 </html>

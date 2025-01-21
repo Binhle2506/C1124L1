@@ -2,9 +2,54 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 9</title>
 </head>
 <body>
+<script>
+    // Hàm kiểm tra và đếm số lần xuất hiện của ký tự trong mảng
+    function countCharacterOccurrence(arr, char) {
+        // Biến đếm số lần xuất hiện
+        let count = 0;
 
+        // Lặp qua từng phần tử trong mảng
+        for (let element of arr) {
+            if (element === char) {
+                count++;
+            }
+        }
+
+        // Nếu ký tự không xuất hiện, trả về -1
+        return count > 0 ? count : -1;
+    }
+
+    // Chương trình chính
+    function main() {
+        // Nhập mảng ký tự từ người dùng
+        const inputArray = prompt("Nhập mảng các ký tự, cách nhau bởi dấu phẩy:").split(',');
+
+        // Nhập ký tự cần kiểm tra
+        const inputChar = prompt("Nhập ký tự cần kiểm tra:");
+
+        // Kiểm tra đầu vào
+        if (!inputChar || inputChar.length !== 1) {
+            console.log("Vui lòng nhập một ký tự hợp lệ.");
+            return;
+        }
+
+        // Gọi hàm kiểm tra và đếm
+        const result = countCharacterOccurrence(inputArray, inputChar);
+
+        // In kết quả
+        if (result === -1) {
+            console.log(`Ký tự "${inputChar}" không xuất hiện trong mảng.`);
+        } else {
+            console.log(`Ký tự "${inputChar}" xuất hiện ${result} lần trong mảng.`);
+        }
+    }
+
+    // Gọi hàm chính
+    main();
+
+</script>
 </body>
 </html>

@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 8</title>
 </head>
 <body>
+<script>
+    // Hàm đảo ngược mảng số nguyên
+    function reverseArray(arr) {
+        console.log("Mảng ban đầu:", arr);
 
+        // Sử dụng phương thức reverse để đảo ngược mảng
+        const reversedArr = arr.slice().reverse();
+
+        console.log("Mảng sau khi đảo ngược:", reversedArr);
+        return reversedArr;
+    }
+
+    // Chương trình chính
+    function main() {
+        // Nhập mảng số nguyên từ người dùng (dạng chuỗi)
+        const input = prompt("Nhập các số nguyên, cách nhau bởi dấu phẩy:");
+
+        // Chuyển chuỗi thành mảng số nguyên
+        let arr = input.split(',').map(Number);
+
+        // Kiểm tra xem các phần tử có phải là số hợp lệ
+        if (arr.some(isNaN)) {
+            console.log("Vui lòng chỉ nhập các số nguyên hợp lệ.");
+            return;
+        }
+
+        // Gọi hàm đảo ngược mảng
+        const reversedArr = reverseArray(arr);
+        console.log("Kết quả sau khi đảo ngược:", reversedArr);
+    }
+
+    // Gọi hàm chính
+    main();
+
+</script>
 </body>
 </html>

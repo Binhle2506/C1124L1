@@ -2,9 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 6</title>
 </head>
 <body>
+<script>
+    // Hàm kiểm tra số nguyên dương
+    function isPositiveInteger(num) {
+        // Kiểm tra số có phải nguyên dương
+        return Number.isInteger(num) && num > 0;
+    }
 
+    // Chương trình chính
+    function main() {
+        // Nhập số từ người dùng
+        const input = parseFloat(prompt("Nhập một số để kiểm tra:"));
+
+        // Kiểm tra giá trị nhập vào có hợp lệ không
+        if (isNaN(input)) {
+            console.log("Vui lòng nhập một số hợp lệ.");
+            return;
+        }
+
+        // Gọi hàm kiểm tra
+        const result = isPositiveInteger(input);
+
+        // In kết quả
+        if (result) {
+            console.log(`${input} là số nguyên dương.`);
+        } else {
+            console.log(`${input} không phải là số nguyên dương.`);
+        }
+    }
+
+    // Gọi hàm chính
+    main();
+
+</script>
 </body>
 </html>

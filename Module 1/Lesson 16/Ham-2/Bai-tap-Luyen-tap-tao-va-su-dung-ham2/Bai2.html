@@ -2,9 +2,23 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 2</title>
 </head>
 <body>
+<script>
+    function circularArea(radius){
+        return radius * radius * 3.14159;
+    }
+    function circularCircumference (radius){
+        return 2 * 3.14159 * radius;
+    }
+    let radius;
+    do{
+        radius = +prompt("Nhập bán kính hình Tròn ");
+    }while(isNaN(radius) || radius <= 0);
+    alert("Diện tích hình tròn là " + circularArea(radius).toFixed(2));
+    alert("Chu vi hình tròn là " + circularCircumference(radius).toFixed(2));
 
+</script>
 </body>
 </html>

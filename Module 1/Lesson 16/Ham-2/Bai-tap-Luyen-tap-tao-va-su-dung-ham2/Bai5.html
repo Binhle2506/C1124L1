@@ -2,9 +2,40 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 5</title>
 </head>
 <body>
+<script>
+    // Hàm tìm giá trị nhỏ nhất trong 3 số nguyên
+    function findMin(a, b, c) {
+        // So sánh để tìm số nhỏ nhất
+        let min = a;
+        if (b < min) min = b;
+        if (c < min) min = c;
+        return min;
+    }
 
+    // Chương trình chính
+    function main() {
+        // Nhập ba số nguyên từ người dùng
+        const a = parseInt(prompt("Nhập số nguyên thứ nhất:"));
+        const b = parseInt(prompt("Nhập số nguyên thứ hai:"));
+        const c = parseInt(prompt("Nhập số nguyên thứ ba:"));
+
+        // Kiểm tra giá trị nhập có hợp lệ không
+        if (isNaN(a) || isNaN(b) || isNaN(c)) {
+            console.log("Vui lòng nhập các số nguyên hợp lệ.");
+            return;
+        }
+
+        // Tìm số nhỏ nhất và in ra kết quả
+        const min = findMin(a, b, c);
+        console.log(`Số nguyên nhỏ nhất trong ba số ${a}, ${b}, và ${c} là: ${min}`);
+    }
+
+    // Gọi hàm chính
+    main();
+
+</script>
 </body>
 </html>

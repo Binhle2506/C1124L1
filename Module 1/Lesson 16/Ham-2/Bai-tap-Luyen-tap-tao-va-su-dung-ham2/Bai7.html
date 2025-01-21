@@ -2,9 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Bài 7</title>
 </head>
 <body>
+<script>
+    // Hàm đổi chỗ hai số nguyên
+    function swapNumbers(a, b) {
+        console.log(`Trước khi đổi: a = ${a}, b = ${b}`);
 
+        // Đổi chỗ hai số
+        let temp = a;
+        a = b;
+        b = temp;
+
+        console.log(`Sau khi đổi: a = ${a}, b = ${b}`);
+        return [a, b];
+    }
+
+    // Chương trình chính
+    function main() {
+        // Nhập hai số nguyên từ người dùng
+        let num1 = parseInt(prompt("Nhập số nguyên thứ nhất:"));
+        let num2 = parseInt(prompt("Nhập số nguyên thứ hai:"));
+
+        // Kiểm tra xem người dùng có nhập số hợp lệ không
+        if (isNaN(num1) || isNaN(num2)) {
+            console.log("Vui lòng nhập các số nguyên hợp lệ.");
+            return;
+        }
+
+        // Gọi hàm đổi chỗ và nhận kết quả
+        const swapped = swapNumbers(num1, num2);
+        console.log(`Kết quả: a = ${swapped[0]}, b = ${swapped[1]}`);
+    }
+
+    // Gọi hàm chính
+    main();
+
+</script>
 </body>
 </html>
