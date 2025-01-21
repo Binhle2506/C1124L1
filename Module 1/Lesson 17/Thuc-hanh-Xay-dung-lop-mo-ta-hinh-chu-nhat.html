@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Bài tập] Xây dựng lớp mô tả hình chữ nhật</title>
+  <style>
+    canvas {
+      border: 1px solid black;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+<h1>Rectangle</h1>
+
+<div>
+  <label for="length">Chiều dài: </label>
+  <input type="number" id="length" value="200" />
+</div>
+<div>
+  <label for="width">Chiều rộng: </label>
+  <input type="number" id="width" value="100" />
+</div>
+<button id="updateBtn">Cập nhật hình chữ nhật</button>
+
+<div>
+  <p>Diện tích: <span id="area"></span></p>
+  <p>Chu vi: <span id="perimeter"></span></p>
+</div>
+
+<canvas id="canvas" width="500" height="500"></canvas>
+
+<script>
+  class Rectangle {
+    constructor(length, width) {
+      this.length = length;
+      this.width = width;
+    }
+
+    // Phương thức tính diện tích
+    getArea() {
+      return this.length * this.width;
+    }
+
+    // Phương thức tính chu vi
+    getPerimeter() {
+      return 2 * (this.length + this.width);
+    }
+
+    // Phương thức vẽ hình chữ nhật lên canvas
+    draw(canvasId) {
+      const canvas = document.getElementById(canvasId);
+      const ctx = canvas.getContext('2d');
+
+      // Vẽ hình chữ nhật với chiều dài và chiều rộng hiện tại
+      ctx.clearRect(0, 0, canvas.width, canvas.height);  // Xóa canvas trước khi vẽ lại
+      ctx.fillStyle = '#4CAF50';  // Màu sắc cho hình chữ nhật
+      ctx.fillRect(50, 50, this.length, this.width);  // Vẽ hình chữ nhật bắt đầu tại (50, 50)
+    }
+
+    // Phương thức cập nhật giá trị chiều dài và chiều rộng
+    updateDimensions(length, width) {
+      this.length = length;
+      this.width = width;
+    }
+  }
+
+  // Tạo đối tượng Rectangle mặc định với chiều dài 200 và chiều rộng 100
+  let myRectangle = new Rectangle(200, 100);
+
+  // Hàm cập nhật hình chữ nhật khi người dùng thay đổi giá trị
+  function updateRectangle() {
+    const length = parseInt(document.getElementById('length').value);
+    const width = parseInt(document.getElementById('width').value);
+
+    // Cập nhật chiều dài và chiều rộng của đối tượng Rectangle
+    myRectangle.updateDimensions(length, width);
+
+    // Cập nhật giao diện (diện tích, chu vi)
+    document.getElementById('area').textContent = myRectangle.getArea();
+    document.getElementById('perimeter').textContent = myRectangle.getPerimeter();
+
+    // Vẽ lại hình chữ nhật
+    myRectangle.draw('canvas');
+  }
+
+  // Lắng nghe sự kiện khi người dùng nhấn nút cập nhật
+  document.getElementById('updateBtn').addEventListener('click', updateRectangle);
+
+  // Khởi tạo khi lần đầu tiên mở trang web
+  window.onload = () => {
+    document.getElementById('area').textContent = myRectangle.getArea();
+    document.getElementById('perimeter').textContent = myRectangle.getPerimeter();
+    myRectangle.draw('canvas');
+  }
+
+</script>
+</body>
+</html>
